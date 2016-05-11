@@ -1,7 +1,7 @@
 <%-- 
     Document   : Eliminar
-    Created on : 2/04/2016, 12:43:09 PM
-    Author     : m
+    Created on : 10/12/2015, 10:17:18 AM
+    Author     : Lenovv
 --%>
 
 <%@page import="Controlador.MySQL"%>

@@ -25,9 +25,7 @@ public class Usuario {
         bd.conectar();
         ResultSet rs = null;
         try {
-            //String sql1 = "SELECT * FROM usuario WHERE nick='"+user+"' AND con_usu'"+clave+"';";
-            
-            String sql1="select * from usuario where nick='"+user+"' AND con_usu='"+clave+"';";
+            String sql1 = "CALL sp_verifSesion('"+user+"','"+clave+"');";
             rs = bd.getStmt().executeQuery(sql1);
             if(rs.next()) {
                 u = new Usuario();

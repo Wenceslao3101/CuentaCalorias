@@ -1,3 +1,4 @@
+<%@page import="Controlador.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
 <%
     HttpSession sesion = request.getSession();
@@ -5,6 +6,12 @@
         String e = "Identifiquese por favor.";
         response.sendRedirect("index.jsp?msj=" + e + "");
     }
+    /*Usuario u=new Usuario();
+    if (u.getCve_pri() !=1) {
+        String m = "Identifiquese como administrador por favor.";
+        response.sendRedirect("index.jsp?msj=" + m + "");
+    }*/
+    
 %>
 <!Doctype html>
 <html>
@@ -13,7 +20,7 @@
         <meta name="viewport" content="width=device-width, maximum-scale=1">
 
         <title>Homepage</title>
-        <link rel="icon" href="img/hiperion.png" type="image/png">
+        
         <link rel="shortcut icon" href="img/hiperion.png" type="img/x-icon">
 
         <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -62,7 +69,7 @@
                 <figure class="logo animated fadeInDown delay-07s">
                     
                 </figure>	
-                <h1 class="animated fadeInDown delay-07s">Bienvenido!! <%=(String) sesion.getAttribute("client")%></h1>
+                <h1 class="animated fadeInDown delay-07s">Bienvenidos!! <%=(String) sesion.getAttribute("client")%></h1>
                 <ul class="we-create animated fadeInUp delay-1s">
                     <li>U.D.S</li>
                 </ul>
@@ -102,8 +109,6 @@
                             <h3>Datos Personales</h3>
                             <p>click en el boton si quieres ver o cambiar tu infomacion</p>
                             <a class="link animated fadeInUp delay-1s" href="cambiosusuarios.jsp">Cambio de datos</a>
-                             <p>Aqui se le dan algunos</p>
-                            <a class="link animated fadeInUp delay-1s" href="menu.jsp">Ejercicos</a>
                         </div>
                     </div>
 
@@ -253,6 +258,7 @@
        
     </div>
 </footer>
+
 </section><!--main-section-end-->
 </section><!--business-talking-end-->
 <div class="container">

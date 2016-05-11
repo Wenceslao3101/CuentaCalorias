@@ -11,8 +11,7 @@
         <meta name="viewport" content="width=device-width, maximum-scale=1">
 
         <title>Homepage</title>
-        <link rel="icon" href="img/hiperion.png" type="image/png">
-        <link rel="shortcut icon" href="img/hiperion.png" type="img/x-icon">
+        
 
         <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600' rel='stylesheet' type='text/css'>
@@ -70,7 +69,7 @@
                         }
 
                     %>
-                    <br>
+                     <br>
                     <br>
 
 
@@ -81,48 +80,66 @@
         <div class="container">
             <ul class="main-nav">
 
+                <li class="small-logo"><a href="#header"><img src="img/small-logo.png" alt=""></a></li>
+                
+            </ul>
+            <a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
+        </div>
+    </nav><!--main-nav-end-->
+
+
+
     <section class="main-section" id="acercade"><!--main-section-start-->
         <div class="container">
-            
-            <div class="row">
-                <div class="col-lg-4 col-sm-6 wow fadeInLeft delay-05s">
-                    <div class="service-list">
-                        <div class="service-list-col1">
-                            <i class="fa-paw"></i>
-                        </div>
-                        <div class="service-list-col2">
-                         
-                      
-                </div>
-            </div>    
-            <header class="header" id="header"><!--header-start-->
-                <div class="container">
-                    <figure class="logo animated fadeInDown delay-07s">
-                        <a href="#"><img src="img/hiperion.png" alt=""></a>	
-                    </figure>	
-                            <p><center>Aviso de privacidad
+            <bloquote><center>Aviso de privacidad
+                                
 
-        Hiperion s.a. de c.v., mejor conocido como Hiperion, con domicilio en calle norte 89-a no 487,
+        <p>Hiperion s.a. de c.v., mejor conocido como Hiperion, con domicilio en calle norte 89-a no 487,
         colonia electricistas, ciudad de México, delegación Azcapotzalco, c.p. 02060, en el país México, 
         y portal de internet localhost:8080\Hiperion23\, es el responsable del uso y protección de sus 
-        datos personales, y al respecto le informamos lo siguiente:
+        datos personales, y al respecto le informamos lo siguiente:</p>
+        
+        <p>Esta política tiene en contemplación la información pesonal que manejamos, tomando muy seriamente 
+        su privacidad y datos personales, tomando las medidas necesarias para ello.</p>
 
-        Los datos personales que recabamos de usted, los utilizaremos para las siguientes finalidades
-        que son necesarias para el servicio que solicita:
-        • Nombre completo
+        <p>Toda información recibida por parte del cliente será utilizada únicamente para iniciar las campañas 
+        contratadas y nunca distribuyendo los datos a terceros.</p>
+        
 
-        • Contraseña
+        Utilizaremos sus datos para las siguientes finalidades que son necesarias para el servicio que solicita:
+        <p>• Nombre completo</p>
 
-        • Correo electrónico
+        <p>• Contraseña</p>
 
-        Para conocer mayor información sobre los términos y condiciones en que serán tratados sus datos 
+        <p>• Correo electrónico</p>
+
+        <p> Los usuarios tienen que poder ver siempre el sitio completo, colores, interfaces. 
+            Los usuarios deben cargar manualmente la información 
+            requerida al enviar mensajes de texto.
+            
+            Eliminacion de cuenta.
+            Sin necesidad de aviso del  para eliminar la cuenta.
+            Dicho eliminación es "indeterminado" y permanente se necesitara volver a rgistrar para iniciar sesion.
+            Si un receptor esta recibiendo algún tipo de mensajes que no sean de su agrado, o simplemente no
+            tiene interés en recibir, con solo enviar una solicitud por email, indicando
+            
+            Uso de Aplicaciones Externas
+            Se encuentra "totalmente prohibido" el uso de aplicaciones externas correspondientes por 
+            USO y ABUSO del sistema.
+            Recuerde que todos los SMS enviados son guardados por un periodo determinado, junto con el Sistema 
+            Operativo, Dirección IP y otros datos de quien envía; por una cuestión de Seguridad.
+            
+            Para conocer mayor información sobre los términos y condiciones en que serán tratados sus datos 
         personales,como los terceros con quienes compartimos su información
         personal y la forma en que podrá ejercer sus derechos ARCO, puede consultar el aviso de privacidad 
-        integral.
+        integral.</p>
+         <br>
+         <center><a href="registro.jsp">Back to Registro</a></center>
+         <br>
+                    </div><p><center>
+
+        
        </center></p>
-                        </div>
-                    </div>
-                    <div class="service-list">
-                        <div class="service-list-col1">
-                            <i class="fa-gear"></i>
-                        </div>
+
+    </body>
+</html>

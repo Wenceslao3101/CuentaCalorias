@@ -1,5 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<%@taglib prefix="botDetect" uri="botDetect"%>
 
 <!Doctype html>
 <html>
@@ -76,6 +76,19 @@
                         <br>
                         <td>&nbsp;</td>
  
+
+                            <label for="captchaCode" class="prompt">
+                                Escribe lo que esta adentro del recuadro:</label>
+                            <!-- Adding BotDetect Captcha to the page -->
+                            <botDetect:captcha id="exampleCaptchaTag"
+                                               userInputClientId="captchaCode" />
+                            <div class="validationDiv">
+                                <input id="captchaCode" type="text" name="captchaCode" />
+                                
+                                <span class="correct">${messages.captchaCodeCorrect}</span>
+                                <span class="incorrect">${messages.captchaCodeIncorrect}</span>
+                            </div>
+                        </fieldset>
                         <input required="" type="radio" name="Acepto" value="1" id="yes"
                                <recu> <label class="_58mt" for="yes"></label>
                             <a href="condicion.jsp" target="_blank" rel="nofollow">Acepto términos y condiciones </a>
@@ -91,7 +104,7 @@
                                     <figure class="logo animated fadeInDown delay-07s">
                                         	
                                     </figure>	
-                                    <h1 class="animated fadeInDown delay-07s">U.D.S Alumno</h1>
+                                    <h1 class="animated fadeInDown delay-07s">U.D.S</h1>
 
 
                                     <ul class="we-create animated fadeInUp delay-1s">

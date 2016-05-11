@@ -1,13 +1,13 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!Doctype html>
-<html>
+<html> 
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, maximum-scale=1">
 
         <title>Homepage</title>
-        <link rel="icon" href="img/hiperion.png" type="image/png">
-        <link rel="shortcut icon" href="img/hiperion.png" type="img/x-icon">
+        <link rel="icon" href=    type=>
+        <link rel="shortcut icon" href="   type="img/x-icon">
 
         <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600' rel='stylesheet' type='text/css'>
@@ -56,7 +56,8 @@
                 <div class="formu">
                     <div class="cerrar"><a href="javascript:cerrar();">Cerrar <strong>X</strong></a></div>
                     <form action="VerificarUsuario" method="post">
-                        <h1>Log In</h1>
+                        <h1>Iniciar Sesión</h1>
+                        <hr>
                         <table>
                             <tr>
                                 <td>Usuario:</td>
@@ -70,13 +71,14 @@
                             <tr>
                                 <td><input type="password" name="pass"></td>
                             </tr>
-                            <tr>
-                            <a href="registro.jsp">Entrenador</a>
                             <br>
-                            <a href="registrar.jsp">Alumno</a>
+                            <tr>
+                            <a href="registrar.jsp">Registro menores de 40</a>
+                            <br>
+                            <a href="registro.jsp">Registro mayores de 40</a>
                             <br>
                             <a href="re.jsp"></a>
-                            <h1>Inicio de sesion</h1>
+                            <br>
                         </table>
                         <td><input type="submit" name="Entrar" id="Entrar" value="Entrar" /></td>
                         <td>&nbsp;</td>
@@ -86,21 +88,21 @@
             <header class="header" id="header"><!--header-start-->
                 <div class="container">
                     <figure class="logo animated fadeInDown delay-07s">
-                        	
+                      	
                     </figure>	
-                    <h1 class="animated fadeInDown delay-07s">Unidad de Desarrollo Software</h1>
+                   <h1 class="animated fadeInDown delay-07s">U.D.S</h1>
                    
                     <ul class="we-create animated fadeInUp delay-1s">
-                        <li></li>
+                  
                     </ul>
-                    <a class="link animated fadeInUp delay-1s" href="javascript:abrir();">Iniciar Sesión</a>
+                    <a class="link animated fadeInUp delay-1s" href="javascript:abrir();">Log In</a>
  <%
                         if (request.getParameter("msj") != null) {
                             out.println("<h3 class='animated fadeInDown delay-07s'>" + request.getParameter("msj") + "</h3>");
                         }
 
                     %>
-    <br>
+                    <br>
                     <br>
 
 
@@ -331,3 +333,4 @@
             </script>
             </body>
             </html>
+            

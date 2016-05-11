@@ -80,15 +80,14 @@ public class RegistrarAdmin extends HttpServlet {
        MySQL bd = new MySQL();
         bd.conectar();
         ResultSet rs = null;
-       String sql1 = "SELECT * FROM usuario WHERE nick='"+nick+"';";
+        String sql1 = "CALL sp_verifUsario('" + nick + "');";
         try {
             rs = bd.getStmt().executeQuery(sql1);
             if (!rs.next()) {
 
                 int privilegio = 3;
                 String m = "Usted fue registrado satisfactoriamente";
-                String sql12 = "INSERT INTO usuario(nick,nom_per,app_per,apm_per,cor_person,con_usu,cve_pri) VALUES('" + nick + "','" + nom + "','" + appe + "','" + appm + "','" + correo + "','" + cont + "'," + privilegio + ");";
-
+                String sql12 = "CALL sp_newUsuario('" + nick + "','" + nom + "','" + appe + "','" + appm + "','" + correo + "','" + cont + "'," + privilegio + ");";
                 bd.abc(sql12);
                 rs.close();
                 bd.cerrar();

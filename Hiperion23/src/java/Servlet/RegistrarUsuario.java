@@ -1,16 +1,17 @@
 package Servlet;
 
-import Controlador.AES2;
+import botdetect.web.Captcha;
 import Controlador.Conexion;
 //import Controlador.Usuario;
+import Controlador.AES2;
 import Controlador.MySQL;
+import Controlador.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
@@ -20,7 +21,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 @WebServlet("/RegistrarUsuario")
 public class RegistrarUsuario extends HttpServlet {
 
@@ -81,6 +81,20 @@ public class RegistrarUsuario extends HttpServlet {
         } else { //si recibe informacion(usuario)
             contra = request.getParameter("contra");
         }
+        
+         Map<String, String> messages = new HashMap<String, String>();
+        request.setAttribute("messages", messages);
+        // validate the Captcha to check we're not dealing with a bot
+        Captcha captcha = Captcha.load(request, "exampleCaptchaTag");
+        boolean isHuman = captcha.validate(request,
+                request.getParameter("captchaCode"));
+        if (!isHuman) {
+            // Captcha validation failed, show error message
+            messages.put("captchaCodeIncorrect", "Captcha incorrecto!");
+            
+            String m = "Captcha incorrecto "+captcha.getCaptchaId();
+            response.sendRedirect("registrar.jsp?msj=" + m + "");
+        }
 
         String nom = AES2.encrypt(nombre);
         String appe = AES2.encrypt(app);
@@ -90,20 +104,14 @@ public class RegistrarUsuario extends HttpServlet {
         MySQL bd = new MySQL();
         bd.conectar();
         ResultSet rs = null;
-        //String sql1 = "CALL sp_verifUsuario('" + nick + "');";
-        String sql1 = "SELECT * FROM usuario WHERE nick='"+nick+"';";
-        
+        String sql1 = "CALL sp_verifUsuario('" + nick + "');";
         try {
             rs = bd.getStmt().executeQuery(sql1);
             if (!rs.next()) {
 
                 int privilegio = 1;
                 String m = "Usted fue registrado satisfactoriamente";
-                //String sql12 = "CALL sp_newUsuario('" + nick + "','" + nom + "','" + appe + "','" + appm + "','" + correo + "','" + cont + "'," + privilegio + ");";
-                
-                String sql12 = "INSERT INTO usuario(nick,nom_per,app_per,apm_per,cor_person,con_usu,cve_pri) VALUES('" + nick + "','" + nom + "','" + appe + "','" + appm + "','" + correo + "','" + cont + "'," + privilegio + ");";
-               
-                
+                String sql12 = "CALL sp_newUsuario('" + nick + "','" + nom + "','" + appe + "','" + appm + "','" + correo + "','" + cont + "'," + privilegio + ");";
                 bd.abc(sql12);
                 rs.close();
                 bd.cerrar();

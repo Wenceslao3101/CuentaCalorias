@@ -14,9 +14,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ *
+ * @author hwongu
+ */
 @WebServlet("/VerificarUsuario")
 public class SVerificarUsuario extends HttpServlet {
 
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, Exception {
 
@@ -36,20 +49,16 @@ public class SVerificarUsuario extends HttpServlet {
 
             }
         }
+        
+        String clave=AES2.encrypt(cla);
 
-        String clave = AES2.encrypt(cla);
-
-        u = u.verificarUsuario(user, clave);
-
-        System.out.println(user);
-        System.out.println(clave);
-// /xCvctI+rSibtRyJZ9AGgg==
+u=u.verificarUsuario(user, clave);
         if (u != null) {
             //if ((user.equals(u.getNick()) || user.equals(u.getCor_person())) && clave.equals(u.getCon_usu())) {
             HttpSession sesion = request.getSession();
             sesion.setAttribute("client", user);
-            sesion.setAttribute("names", AES2.decrypt(u.getNom_per()) + " " + AES2.decrypt(u.getApp_per()) + " " + AES2.decrypt(u.getApm_per()));
-            // sesion.setAttribute("pw", cla);
+            sesion.setAttribute("names", AES2.decrypt(u.getNom_per()) + " " +AES2.decrypt(u.getApp_per()) + " " +AES2.decrypt(u.getApm_per()));
+           // sesion.setAttribute("pw", cla);
             sesion.setAttribute("ID", u.getId_usu());
             //sesion.setAttribute("pri", u.getCve_pri());
             switch (u.getCve_pri()) {
@@ -70,7 +79,6 @@ public class SVerificarUsuario extends HttpServlet {
                     break;
             }
         } else {
-            System.out.println("not found");
             String e = "Verifique usuario y contraseña";
             response.sendRedirect("index.jsp?msj=" + e + "");
         }
