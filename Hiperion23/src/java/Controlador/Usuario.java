@@ -194,7 +194,7 @@ public LinkedList<Usuario>  ObtenerUsuarios() {
             }
             stmt.cancel();
 
-            String sql = "INSERT INTO Usuario (cve_person, con_usu, cve_foro, cve_pri, nick) VALUES(" + cve + ",'" + contra + "'," + foro + "," + privilegio + ",'" + nick + "')";
+            String sql = "INSERT INTO Usuario (Id_usu, cve_person, con_usu, cve_foro, cve_pri, nick) VALUES(" + cve + ",'" + contra + "'," + foro + "," + privilegio + ",'" + nick + "')";
             //System.out.println(sql);
             stmt.execute(sql);
 
@@ -233,7 +233,7 @@ public LinkedList<Usuario>  ObtenerUsuarios() {
                 cve = rs.getInt("cve_person");
             }
             stmt.cancel();
-            String sql = "INSERT INTO Usuario (cve_person, con_usu, cve_foro, cve_pri, nick) VALUES(" + cve + ",'" + contra + "'," + foro + ",2,'" + nick + "')";
+            String sql = "INSERT INTO Usuario (Id_usu, cve_person, con_usu, cve_foro, cve_pri, nick) VALUES(" + cve + ",'" + contra + "'," + foro + ",2,'" + nick + "')";
             //System.out.println(sql);
             stmt.execute(sql);
 
@@ -272,7 +272,7 @@ public LinkedList<Usuario>  ObtenerUsuarios() {
                 cve = rs.getInt("cve_person");
             }
             stmt.cancel();
-            String sql = "INSERT INTO Usuario (cve_person, con_usu, cve_foro, cve_pri, nick) VALUES(" + cve + ",'" + contra + "'," + foro + ",3,'" + nick + "')";
+            String sql = "INSERT INTO Usuario (Id_usu, cve_person, con_usu, cve_foro, cve_pri, nick) VALUES(UUID()," + cve + ",'" + contra + "'," + foro + ",3,'" + nick + "')";
             //System.out.println(sql);
             stmt.execute(sql);
 
