@@ -293,6 +293,39 @@ public LinkedList<Usuario>  ObtenerUsuarios() {
 
     }
 
+    public void subirVideo(String name, String user) {
+
+        Usuario u = null;
+        int genero;
+        Connection cn = null;
+        PreparedStatement pr = null;
+        ResultSet rs = null;
+
+        try {
+            cn = Conexion.getConexion();
+            Statement stmt = cn.createStatement();
+
+            String sql = "INSERT INTO video (Id_vid, videoName, videoPostDate, User_idUser) VALUES(UUID(),'" + name + "',NOW(),'" + user + "');";
+            //System.out.println(sql);
+            stmt.execute(sql);
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+
+        } finally {
+            try {
+                rs.close();
+                pr.close();
+                rs.close();
+                cn.close();
+            } catch (SQLException ex) {
+
+            }
+
+        }
+
+    }
+
     public void modCon_usu(int Id_usu,
             String con_usu) {
 

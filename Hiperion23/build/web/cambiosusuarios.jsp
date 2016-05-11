@@ -19,8 +19,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, maximum-scale=1">
         <title>Homepage</title>
-        <link rel="icon" href="img/hiperion.png" type="image/png">
-        <link rel="shortcut icon" href="img/hiperion.png" type="img/x-icon">
+       
+        
         <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600' rel='stylesheet' type='text/css'>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css">

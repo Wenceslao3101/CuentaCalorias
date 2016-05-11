@@ -64,6 +64,22 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+CREATE TABLE `video` (
+  `Id_vid` varchar(40) NOT NULL ,
+  `videoName` varchar(45) NOT NULL,
+  `videoPostDate` DATETIME NOT NULL,
+  `User_idUser` int(11) NOT NULL,
+  
+  PRIMARY KEY (`Id_vid`),
+  CONSTRAINT `fk_Videos`
+    FOREIGN KEY (`User_idUser`)
+    REFERENCES `realidad`.`usuario` (`Id_usu`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
 --
 -- Dumping data for table `usuario`
 --

@@ -1,8 +1,3 @@
-<%-- 
-    Document   : re
-    Created on : 5/12/2015, 05:26:05 PM
-    Author     : CesarXD
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 

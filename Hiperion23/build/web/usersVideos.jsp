@@ -1,7 +1,7 @@
 <%-- 
-    Document   : Eliminar
-    Created on : 10/12/2015, 10:17:18 AM
-    Author     : Lenovv
+    Document   : usersVideos
+    Created on : 11/05/2016, 05:00:31 PM
+    Author     : Alumno
 --%>
 
 <%@page import="Controlador.MySQL"%>
@@ -18,7 +18,7 @@ HttpSession sesion = request.getSession();
         bd.conectar();
         ResultSet rs = null;
         try {
-            String sql1 = "Delete from Usuario where Id_usu=" + ID + ";";
+            String sql1 = "Select from Video where Id_usu=" + ID + ";";
             bd.abc(sql1);
             rs.close();
             bd.cerrar();
@@ -40,3 +40,13 @@ HttpSession sesion = request.getSession();
 
 
 %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+    </body>
+</html>

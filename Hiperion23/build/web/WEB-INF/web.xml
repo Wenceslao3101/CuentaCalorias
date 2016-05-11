@@ -20,6 +20,10 @@
         <servlet-name>RegistrarAlumno</servlet-name>
         <servlet-class>Servlet.RegistrarAlumno</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UploadVideo</servlet-name>
+        <servlet-class>Servlet.UploadVideo</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ResgistrarUsuario1</servlet-name>
         <url-pattern>/ResgistrarUsuario1</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>RegistrarAlumno</servlet-name>
         <url-pattern>/RegistrarAlumno</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadVideo</servlet-name>
+        <url-pattern>/UploadVideo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

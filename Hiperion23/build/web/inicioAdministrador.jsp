@@ -110,41 +110,47 @@ MySQL bd = new MySQL();
         <header class="header" id="header"><!--header-start-->
             <div class="container">
                 <figure class="logo animated fadeInDown delay-07s">
-                    
+                    <a href="#"><img src="img/hiperion.png" alt=""></a>	
                 </figure>	
                 <h1 class="animated fadeInDown delay-07s">Pagina de Inicio Admistrador</h1>
                 <ul class="we-create animated fadeInUp delay-1s">
-                    <li>UDS</li>
+                    <li>Hiperion</li>
                     </header><!--header-end-->
 
 
                     <nav class="main-nav-outer" id="test"><!--main-nav-start-->
                         <div class="container">
                             <ul class="main-nav">
-                                
-                                <li><a href="#acercade">Inicio</a></li>
-                                <a class="link animated fadeInUp delay-1s" href="cerrar.jsp;">Cerrar sesion</a>
-                                
+
+                                <li class="small-logo"><a href="#header"><img src="img/small-logo.png" alt=""></a></li>
+                                <li><a href="#header">Inicio</a></li>
+                                <li><a href="#acercade"></a></li>
+
                             </ul>
                             <a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
                         </div>
                     </nav><!--main-nav-end-->
                     <section class="main-section" id="acercade"><!--main-section-start-->
                         <div class="container">
-                            <h2>Aqui se encuentran sus usuarios</h2>
+                            <h2>Bienvenido a Hiperion selecciona la categoria que gustas ver</h2>
+
+                            <a class="link animated fadeInUp delay-1s" href="cerrar.jsp;">Cerrar sesion</a>
                         </div>
-                       
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-6 wow fadeInLeft delay-05s">
+                                <div class="service-list">
+                                    <div class="service-list-col1">
+                                        <i class="fa-paw"></i>
+                                    </div>
                                     <div class="service-list-col2">
                                         <h3>Datos de la persona</h3>
                                         <p>click en el boton de abajo si quieres ver o cambiar tu infomacion</p>
                                         <a class="link animated fadeInUp delay-1s" href="cambiosusuarios.jsp;">Cambio de datos</a>
                                     </div>
-                                   
-                                        <h3>EliminarCuenta</h3>
-                                        <p>click en el boton si quiere eliminar</p>
-                                        <a class="link animated fadeInUp delay-1s" href="Eliminar.jsp;">Cambio de datos</a>
-                                    </div>
-                                    
+                                    <h3>Eliminar cuenta</h3>
+                                    <p></p>
+                                    <a class="link animated fadeInUp delay-1s" href="cambiosusuarios.jsp;">Eliminar cuenta</a>
+                                </div>
                             </div>
                             </div>
                             <%
